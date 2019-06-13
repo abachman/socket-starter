@@ -1,0 +1,27 @@
+{
+  "name": "socket-starter-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test",
+    "start": "nodemon backend.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abachman/socket-starter.git"
+  },
+  "author": "Adam Bachman <adam.bachman@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abachman/socket-starter/issues"
+  },
+  "homepage": "https://github.com/abachman/socket-starter#readme",
+  "dependencies": {
+    "ws": "^7.0.0",
+    "sqlite3": "^4.0.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
