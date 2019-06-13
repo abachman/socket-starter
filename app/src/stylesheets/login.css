@@ -1,0 +1,59 @@
+.form-2 {
+	max-width: 400px;
+	margin: 10px auto;
+	padding: 16px;
+	background: #F7F7F7;
+}
+
+.form-2 * {
+	font-size: 16px;
+}
+
+.form-2 label{
+	display: block;
+	margin: 0px 0px 15px 0px;
+}
+
+.form-2 label > span{
+  color: #555;
+  text-align: left;
+  display: block;
+}
+
+.form-2 input[type="text"],
+.form-2 textarea
+{
+	outline: none;
+	box-sizing: border-box;
+	width: 100%;
+	background: #fff;
+	margin-bottom: 4%;
+	border: 1px solid #ccc;
+	padding: 3%;
+	color: #555;
+}
+.form-2 input[type="text"]:focus,
+.form-2 textarea:focus,
+.form-2 select:focus
+{
+	border: 1px solid #43D1AF;
+}
+
+.form-2 input[type="submit"],
+.form-2 input[type="button"]{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	padding: 3%;
+	background: #43D1AF;
+	border-bottom: 2px solid #30C29E;
+	border-top-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	color: #fff;
+}
+.form-2 input[type="submit"]:hover,
+.form-2 input[type="button"]:hover{
+	background: #2EBC99;
+}
