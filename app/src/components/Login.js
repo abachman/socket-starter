@@ -12,18 +12,6 @@ class LoginForm extends React.Component {
     this.field = React.createRef()
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if (!prevProps.username && this.props.username && !this.props.room && this.props.connected) {
-  //     // because login is async on the websocket, we can't join a room until we
-  //     // know login has finished.
-  //     const room = this.room.current.value
-  //     console.log("componentDidUpdate joining", room)
-  //     this.props.dispatch(Actions.join(room))
-  //     this.props.history.push(`/${room}`)
-  //   } else {
-  //     console.log("componentDidUpdate", this.props)
-  //   }
-  // }
   componentDidMount() {
     this.field.current.focus()
   }
@@ -82,7 +70,7 @@ class JoinForm extends React.Component {
 function Login(props) {
   return (
     <div className="App">
-      <header className="App-header">
+      <header>
         <p>{ props.username ? 'Hi ' + props.username + '!' : 'Chat.' }</p>
         { props.username ? <JoinForm {...props} /> : <LoginForm {...props} />}
       </header>
