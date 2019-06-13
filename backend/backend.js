@@ -187,8 +187,7 @@ function handleJoin(socket, data, payload, session) {
   const now = new Date().getTime()
 
   const existingRoomCheckSql = `
-    select count(*) as count from session_rooms
-    where client_id = ? AND room = ?
+    select count(*) as count from session_rooms where client_id = ? AND room = ?
   `
 
   sessions.get(existingRoomCheckSql, [session_id, room], function (err, row) {
@@ -200,7 +199,7 @@ function handleJoin(socket, data, payload, session) {
       sessions.run("insert into session_rooms (client_id, room, at) VALUES (?, ?, ?)", [session_id, room, now], function (err) {
         log(user, 'session', session_id, "joined room", room)
 
-        // notify all room members
+        // notify all room members that another user has joined
         const out = {
           type: 'join',
           user: user,
@@ -215,7 +214,8 @@ function handleJoin(socket, data, payload, session) {
 
 
 function clearSession(session_id) {
-  sessions.run("delete from sessions where client_id = ?", [session_id], function (err) {
+  sessions.exec(`delete from sessions where client_id = '${session_id}';
+                 delete from session_rooms where client_id = '${session_id}'`, function (err) {
     if (err) {
       log('error deleting', session_id)
     } else {

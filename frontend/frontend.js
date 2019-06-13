@@ -11,8 +11,6 @@
 const WebSocket = require('ws'),
       EventEmitter = require('events');
 
-const wss = new WebSocket.Server({ port: 8080 });
-
 function log(...msg) {
   console.log('[frontend]', ...msg)
 }
@@ -163,7 +161,10 @@ const backend = new BackendConnection()
 const clients = new SocketCollection()
 let count = 0
 
+// start listening for connections
+const wss = new WebSocket.Server({ port: 8080 })
 wss.on('connection', function connection(ws) {
+  // this is where unique session IDs are created
   const connectionID = shortid()
 
   log("new connection", connectionID)
