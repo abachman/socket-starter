@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import Actions from '../store/actions'
+import ConnectionStatus from './ConnectionStatus'
 
 import '../stylesheets/chat.css'
 
@@ -72,6 +73,7 @@ class Chat extends React.Component {
     return (
       <div className="App chat">
         <header>
+          <ConnectionStatus />
           <h1>{match.params.room}</h1>
         </header>
         <main>

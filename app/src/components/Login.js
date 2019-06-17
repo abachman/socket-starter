@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import Actions from '../store/actions'
+import ConnectionStatus from './ConnectionStatus'
 
 import '../stylesheets/login.css'
 
@@ -71,6 +72,7 @@ function Login(props) {
   return (
     <div className="App">
       <header>
+        <ConnectionStatus />
         <p>{ props.username ? 'Hi ' + props.username + '!' : 'Chat.' }</p>
         { props.username ? <JoinForm {...props} /> : <LoginForm {...props} />}
       </header>

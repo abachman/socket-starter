@@ -21,6 +21,22 @@ header {
   color: white;
 }
 
+header .status {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  color: transparent;
+  background: #f00;
+}
+
+header .status.connected {
+  background: #0f0;
+}
+
 .chat header {
   height: 25vh;
 }
