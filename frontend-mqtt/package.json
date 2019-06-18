@@ -1,0 +1,28 @@
+{
+  "name": "socket-starter-frontend-mqtt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test",
+    "start": "nodemon frontend-mqtt.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abachman/socket-starter.git"
+  },
+  "author": "Adam Bachman <adam.bachman@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abachman/socket-starter/issues"
+  },
+  "homepage": "https://github.com/abachman/socket-starter#readme",
+  "dependencies": {
+    "aedes": "^0.38.1",
+    "websocket-stream": "^5.5.0",
+    "ws": "^7.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
