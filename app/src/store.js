@@ -26,6 +26,7 @@ const initialState = {
   room: null,
   user: null,
   socket: { status: 'closed', connected_at: null, channel: null },
+  mqtt: { status: 'closed', channel: null, subscriptions: {} },
   messages: []
 }
 

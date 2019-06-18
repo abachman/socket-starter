@@ -3,17 +3,25 @@ import { connect } from 'react-redux'
 
 class ConnectionStatus extends React.Component {
   render() {
-    console.log("[ConnectionStatus]", this.props.connected)
-    const className = `status ${this.props.connected ? 'connected' : 'disconnected'}`
+
+    const { ws_connected, mqtt_connected } = this.props
+    console.log("[ConnectionStatus]", { ws_connected, mqtt_connected })
+    const wsClassName = `status ${ws_connected ? 'connected' : 'disconnected'}`
+    const mqttClassName = `status ${mqtt_connected ? 'connected' : 'disconnected'}`
     return (
-      <span className={className}>()</span>
+      <div className="connections">
+        <span className={wsClassName}></span>
+        {' '}
+        <span className={mqttClassName}></span>
+      </div>
     )
   }
 }
 
 const mapStateToProps = state => {
   return {
-    connected: state.socket.status === 'open'
+    ws_connected: state.socket.status === 'open',
+    mqtt_connected: state.mqtt.status === 'open',
   }
 }
 

@@ -21,11 +21,14 @@ header {
   color: white;
 }
 
-header .status {
+header .connections {
   position: absolute;
   top: 10px;
   left: 10px;
-  display: block;
+}
+
+header .status {
+  display: inline-block;
   width: 16px;
   height: 16px;
   border-radius: 8px;

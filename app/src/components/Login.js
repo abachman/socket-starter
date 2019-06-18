@@ -83,7 +83,6 @@ function Login(props) {
 const mapStateToProps = state => {
   return {
     username: state.user ? state.user.username : null,
-    connected: state.socket.status === 'open',
     room: state.room
   }
 }

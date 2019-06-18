@@ -1,8 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import Actions from '../store/actions'
 import ConnectionStatus from './ConnectionStatus'
+import { MessageSelector } from '../store/reducers'
 
 import '../stylesheets/chat.css'
 
@@ -45,6 +47,13 @@ class ChatForm extends React.Component {
 connect()(ChatForm)
 
 class Message extends React.Component {
+  static propTypes = {
+    message: PropTypes.shape({
+      sender: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired
+    }).isRequired
+  }
+
   render() {
     const { message, user } = this.props
 
@@ -56,6 +65,8 @@ class Message extends React.Component {
           <div className="content">{ this.props.message.content }</div>
         </div>
       )
+    } else {
+      return null
     }
   }
 }
@@ -89,11 +100,14 @@ class Chat extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  const room = ownProps.match.params.room
+  const messages = MessageSelector.getMessages(state, room)
+
   return {
     user: state.user,
     room: state.room,
-    messages: state.messages
+    messages
   }
 }
 
