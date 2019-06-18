@@ -177,7 +177,7 @@ function handleJoin(socket, data, payload, session) {
   log("joining", room)
 
   // update localized cache
-  if (session.rooms.indexOf(room) < 0) {
+  if (session.rooms && session.rooms.indexOf(room) < 0) {
     session.rooms.push(room)
   }
   log('update session cache to', session)
