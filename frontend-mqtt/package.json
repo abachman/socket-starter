@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/abachman/socket-starter#readme",
   "dependencies": {
-    "aedes": "^0.38.1",
+    "aedes": "^0.42.1",
     "websocket-stream": "^5.5.0",
     "ws": "^7.0.0"
   },
