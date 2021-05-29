@@ -20,7 +20,7 @@
   "dependencies": {
     "aedes": "^0.38.1",
     "websocket-stream": "^5.5.0",
-    "ws": "^7.0.0"
+    "ws": "^7.4.6"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
